@@ -1,0 +1,114 @@
+{
+  "system_name": "Mini Flash OS",
+  "editions": {
+    "original": "Mini Flash OS",
+    "future_prime": "Mini Flash OS Prime",
+    "future_lite": "Lite Part OS Flash Mini"
+  },
+  "workflow": "web",
+  "target_hardware": {
+    "reference_device": "Dell Inspiron 14 (2010)",
+    "cpu": "Intel Core i3",
+    "physical_ram_gb": 4
+  },
+  "system_limits": {
+    "base_max_mb": 390,
+    "persistence_max_mb": 425,
+    "hard_cap_gb": 1.5,
+    "base_filesystem": "squashfs-xz",
+    "extra_compressors_count": 3,
+    "extra_compressors_excludes": ["ram_manager", "auto_cache_clean_5m"]
+  },
+  "install_limits": {
+    "max_games": 3,
+    "max_apps": 3,
+    "reason_message": "Só é permitido instalar no máximo 3 jogos e 3 aplicativos neste sistema porque o Mini Flash OS foi otimizado para ser leve e economizar memória."
+  },
+  "boot_persistence": {
+    "prompt": "Quer usar com persistência de dados?",
+    "short_definition": "Salva seus arquivos e ajustes mesmo após reiniciar.",
+    "extra_physical_ram_mb": 150,
+    "wait_for_persistence_file": true,
+    "modes": {
+      "ram_compressed_mb": 80,
+      "hybrid_total_mb": 55,
+      "hybrid_usb_mb": [25, 25],
+      "no_usb_space_cloud_ram_max_gb": 4
+    },
+    "disk_install": {
+      "disk_min_gb": 8,
+      "disk_max_gb": 12,
+      "ram_min_gb": 2,
+      "ram_max_gb": 4,
+      "auto_persistence": true
+    }
+  },
+  "cloud_and_swap": {
+    "login_providers": ["email", "google", "github"],
+    "play_store_direct": true,
+    "swap_file_gb": 2.5,
+    "remove_swap_on_cloud_memory": true,
+    "swap_confirmation_options": ["Sim", "Cancelar"]
+  },
+  "flash_part_suite": {
+    "size_mb": 65,
+    "nuvem_otimizador": {
+      "min_file_size_mb": 150,
+      "requires_login": true
+    },
+    "configurador_particao": {
+      "virtual_ram_gb_min": 2,
+      "virtual_ram_gb_max": 8,
+      "cloud_storage_gb_max": 8,
+      "requires_login": true
+    },
+    "creator": {
+      "virtual_ram_gb": 8,
+      "cloud_storage_gb_max": 16,
+      "requires_admin_account": true,
+      "requires_login": true,
+      "requires_swap_confirmation": true
+    },
+    "root_mode": {
+      "pin": "2410",
+      "requires_admin_access": true,
+      "loses_current_admin": true,
+      "requires_new_admin_user_and_password": true,
+      "virtual_ram_gb_max": 10,
+      "cloud_storage_gb_max": 18,
+      "auto_cache_interval_minutes": 5,
+      "hidden_for_standard_users": true
+    }
+  },
+  "layout_manager": {
+    "enabled": true,
+    "categories": [
+      "jogos",
+      "natureza",
+      "vida",
+      "astronomia",
+      "gastronomia",
+      "ciencias",
+      "outros"
+    ]
+  },
+  "trash": {
+    "target_folder": "Sessoes",
+    "auto_delete_hours": 2,
+    "other_folders_protected": true
+  },
+  "games": {
+    "examples": ["Roblox", "Clash of Clans"],
+    "size_rule": {
+      "watch_band_min_mb": 99,
+      "watch_band_max_mb": 110,
+      "heavy_threshold_mb": 110
+    },
+    "allow_web_version": true,
+    "run_mode": "one_at_a_time",
+    "preset": {
+      "graphics": "minimum",
+      "resolution": "balanced_low"
+    }
+  }
+}
