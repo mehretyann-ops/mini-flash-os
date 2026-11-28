@@ -1,0 +1,9 @@
+{
+  "iso_pendrive_max_mb": 325,
+  "apps": [
+    "playstore",
+    "trash",
+    "flashpart",
+    "flash-party"
+  ]
+}
